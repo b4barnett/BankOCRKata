@@ -14,7 +14,7 @@ namespace BankKataOCR.Tests
         [Test]
         public void SingleOCRNumber_Zero_Test()
         {
-            SingleOCRNumber.Builder builder = new SingleOCRNumber.Builder( new List<Business.NumberSpecification>() { Constants.NumberSpecifications.ZeroSpecification } );
+            SingleOCRNumber.Builder builder = new SingleOCRNumber.Builder( new List<Business.NumberSpecification>() { Constants.NumberSpecifications.ZeroSpecification() } );
 
             builder.SetLetter( Constants.Space );
             builder.SetLetter( Constants.Underscore );

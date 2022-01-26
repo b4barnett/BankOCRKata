@@ -32,12 +32,20 @@ namespace BankKataOCR.Business.Data
             public static readonly int HeightZeroIndexBased = 2;
         }
 
+        public static class NumbersPerLine
+        {
+            public static readonly int Count = 9;
+            public static readonly int CountZeroIndexBased = 8;
+        }
+
         #endregion
 
         #region NumberSpecifications
 
         public static class NumberSpecifications
         {
+            public static List<NumberSpecification> Defaults() => new List<NumberSpecification>() { ZeroSpecification() };
+
 
             #region zero
 
@@ -45,7 +53,7 @@ namespace BankKataOCR.Business.Data
                                             { Pipe,  Space,      Pipe },
                                             { Pipe,  Underscore, Pipe } };
 
-            public static NumberSpecification ZeroSpecification = new NumberSpecification( zero, 0 );
+            public static NumberSpecification ZeroSpecification() => new NumberSpecification( zero, 0 );
 
             #endregion
         }

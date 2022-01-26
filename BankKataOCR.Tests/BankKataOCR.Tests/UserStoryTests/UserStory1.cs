@@ -1,4 +1,8 @@
-﻿using NUnit.Framework;
+﻿using BankKataOCR.Business;
+using BankKataOCR.Business.Data;
+using BankKataOCR.Business.Interfaces;
+using FluentAssertions;
+using NUnit.Framework;
 using System.IO;
 
 namespace BankOcrKata
@@ -55,6 +59,16 @@ namespace BankOcrKata
   ||_  _|  | _||_|  ||_| _|", "123456789")]
         public void Tests(string input, string expectedResult)
         {
+            IOCRReader reader = new OCRReader( Constants.NumberSpecifications.Defaults() );
+
+            string actual;
+
+            using ( var strReader = new StringReader( input ) )
+            {
+                actual = reader.ReadSingleOCRLine( strReader );
+            }
+
+            actual.Should().Be( expectedResult );
         }
     }
 }
