@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System.IO;
-using TechTest.Services;
 
 namespace BankOcrKata
 {
@@ -56,12 +55,6 @@ namespace BankOcrKata
   ||_  _|  | _||_|  ||_| _|", "123456789")]
         public void Tests(string input, string expectedResult)
         {
-            using ( var stringReader = new StringReader( input ) )
-            {
-                OCRReader.ReadSingleOCRLine( stringReader );
-            }
-
-            int i = 0;
         }
     }
 }
