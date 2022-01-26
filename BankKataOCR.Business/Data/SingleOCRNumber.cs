@@ -32,6 +32,13 @@ namespace BankKataOCR.Business.Data
 
             public SingleOCRNumber Build()
             {
+                var allSuccess = _numberSpecifications.Select( x => x.Match( _letters ) )
+                                      .Where( x => x.IsSuccessful );
+                if ( allSuccess.Count() > 1 )
+                {
+                    int k = 0;
+                }
+
                 var value = _numberSpecifications.Select( x => x.Match( _letters ) )
                                       .Where( x => x.IsSuccessful )
                                       .Single()

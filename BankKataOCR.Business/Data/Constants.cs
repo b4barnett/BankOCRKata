@@ -44,7 +44,10 @@ namespace BankKataOCR.Business.Data
 
         public static class NumberSpecifications
         {
-            public static List<NumberSpecification> Defaults() => new List<NumberSpecification>() { ZeroSpecification() };
+            public static List<NumberSpecification> Defaults() => new List<NumberSpecification>() { ZeroSpecification(), OneSpecification(), TwoSpecification(), 
+                ThreeSpecification(), FourSpecification(), FiveSpecification(), 
+                SixSpecification(), SevenSpecification(), EightSpecification(), 
+                NineSpecification()  };
 
 
             #region zero
@@ -56,6 +59,97 @@ namespace BankKataOCR.Business.Data
             public static NumberSpecification ZeroSpecification() => new NumberSpecification( zero, 0 );
 
             #endregion
+
+            #region one
+
+            private static readonly char[,] one = { { Space, Space, Space  },
+                                                    { Space, Space, Pipe },
+                                                    { Space, Space, Pipe } };
+
+            public static NumberSpecification OneSpecification() => new NumberSpecification( one, 1 );
+
+            #endregion
+
+            #region two
+            private static readonly char[,] two = { { Space, Underscore, Space },
+                                                    { Space, Underscore, Pipe },
+                                                    { Pipe, Underscore, Space } };
+
+            public static NumberSpecification TwoSpecification() => new NumberSpecification( two, 2 );
+
+            #endregion
+
+            #region three
+
+            private static readonly char[,] three = { { Space, Underscore, Space },
+                                                      { Space, Underscore, Pipe },
+                                                      { Space, Underscore, Pipe } };
+
+            public static NumberSpecification ThreeSpecification() => new NumberSpecification( three, 3 );
+
+            #endregion
+
+            #region four
+
+            private static readonly char[,] four = { { Space, Space, Space},
+                                                     { Pipe, Underscore, Pipe },
+                                                     { Space, Space, Pipe } };
+
+            public static NumberSpecification FourSpecification() => new NumberSpecification( four, 4 );
+
+            #endregion
+
+            #region five
+
+            private static readonly char[,] five = { { Space, Underscore, Space },
+                                                     { Pipe, Underscore, Space },
+                                                     { Space, Underscore, Pipe } };
+
+            public static NumberSpecification FiveSpecification() => new NumberSpecification( five, 5 );
+
+            #endregion
+
+            #region six
+
+            private static readonly char[,] six = { { Space, Underscore, Space },
+                                                     { Pipe, Underscore, Space },
+                                                     { Pipe, Underscore, Pipe } };
+
+            public static NumberSpecification SixSpecification() => new NumberSpecification( six, 6 );
+
+            #endregion
+
+            #region seven
+
+            private static readonly char[,] seven = { { Space, Underscore, Space },
+                                                       { Space, Space, Pipe },
+                                                       { Space, Space, Pipe } };
+
+
+            public static NumberSpecification SevenSpecification() => new NumberSpecification( seven, 7 );
+
+            #endregion
+
+            #region eight 
+
+            private static readonly char[,] eight = { { Space, Underscore, Space },
+                                                    { Pipe, Underscore, Pipe },
+                                                    { Pipe, Underscore, Pipe } };
+
+            public static NumberSpecification EightSpecification() => new NumberSpecification( eight, 8 );
+
+            #endregion
+
+            #region nine
+
+            private static readonly char[,] nine = { { Space, Underscore, Space },
+                                                    { Pipe, Underscore, Pipe },
+                                                    { Space, Underscore, Pipe } };
+
+            public static NumberSpecification NineSpecification() => new NumberSpecification( nine, 9 );
+
+            #endregion
+
         }
 
         #endregion

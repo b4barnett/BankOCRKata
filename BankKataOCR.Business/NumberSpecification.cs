@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,9 +8,13 @@ using BankKataOCR.Business.Data;
 
 namespace BankKataOCR.Business
 {
+    [DebuggerDisplay( "{Number}" )]
     public class NumberSpecification
     {
         private readonly int _number;
+
+   
+        public int Number => _number;
 
         private char[,] _specification { get; }
 
@@ -21,9 +26,9 @@ namespace BankKataOCR.Business
 
         public Result<int> Match( char[,] input )
         {
-            for ( int i = 0; i < Constants.OcrNumberWidth.WidthZeroIndexBased; i++ )
+            for ( int i = 0; i < Constants.OcrNumberWidth.Width; i++ )
             {
-                for ( int s = 0; s < Constants.OcrNumberHeight.HeightZeroIndexBased; s++ )
+                for ( int s = 0; s < Constants.OcrNumberHeight.Height; s++ )
                 {
                     if ( input[ i, s ] != _specification[ i, s ] )
                     {
