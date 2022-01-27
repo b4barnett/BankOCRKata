@@ -52,7 +52,7 @@ namespace BankKataOCR.Business
 
             return dict.Aggregate( new StringBuilder(), ( builder, kvp ) => 
             {
-                int value = kvp.Value.Build().Number;
+                string value = kvp.Value.Build().Number.Match( () => "?", n => n.ToString() ); 
                 builder.Append( value );
                 return builder;
             } ).ToString();

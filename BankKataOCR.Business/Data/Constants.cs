@@ -14,6 +14,13 @@ namespace BankKataOCR.Business.Data
         public static readonly char Pipe = '|';
         #endregion
 
+        #region 
+
+        public static readonly string ReadErrorIndicator = "ILL";
+        public static readonly string CheckSumFailedIndicator = "ERR";
+
+        #endregion
+
         #region OCR values
 
         /* On the widths because the empty line for numbers does not

@@ -30,7 +30,7 @@ namespace BankKataOCR.Tests
 
             var number = builder.Build();
 
-            number.Number.Should().Be( 0 );
+            number.Number.Match( () => Assert.Fail(), n => n.Should().Be( 0 ) );
         }
     }
 }

@@ -1,8 +1,9 @@
-﻿using System.Collections.Immutable;
+﻿using Functional.Option;
+using System.Collections.Immutable;
 
 namespace BankKataOCR.Business.Data
 {
-    public record SingleOCRNumber( int Number )
+    public record SingleOCRNumber( Option<int> Number )
     {
         public class Builder
         {
@@ -32,18 +33,19 @@ namespace BankKataOCR.Business.Data
 
             public SingleOCRNumber Build()
             {
-                var allSuccess = _numberSpecifications.Select( x => x.Match( _letters ) )
+                var allAssessments = _numberSpecifications.Select( x => x.Match( _letters ) )
                                       .Where( x => x.IsSuccessful );
-                if ( allSuccess.Count() > 1 )
+
+                if ( allAssessments.Any() == false )
                 {
-                    int k = 0;
+                    return new SingleOCRNumber( Option<int>.None );
                 }
 
                 var value = _numberSpecifications.Select( x => x.Match( _letters ) )
                                       .Where( x => x.IsSuccessful )
                                       .Single()
                                       .Value; //normally a dangerous assumption but really validation should be done on the AllSpecifications
-                return new SingleOCRNumber( value );
+                return new SingleOCRNumber( Option.Some<int>( value ) );
             }
         }
     }
