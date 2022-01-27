@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankKataOCR.Tests", "BankKataOCR.Tests\BankKataOCR.Tests.csproj", "{AA1FB5EA-2883-4739-A432-487848BDCDAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankKataOCR.Tests", "BankKataOCR.Tests\BankKataOCR.Tests.csproj", "{AA1FB5EA-2883-4739-A432-487848BDCDAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankKataOCR.Business", "..\BankKataOCR.Business\BankKataOCR.Business.csproj", "{6893652D-909B-47E1-BC9B-684D24CB7ED9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankKataOCR.Business", "..\BankKataOCR.Business\BankKataOCR.Business.csproj", "{6893652D-909B-47E1-BC9B-684D24CB7ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC_UserStory4", "POC_UserStory4\POC_UserStory4.csproj", "{B65F1800-AC01-472F-A57D-39A17951E352}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6893652D-909B-47E1-BC9B-684D24CB7ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6893652D-909B-47E1-BC9B-684D24CB7ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6893652D-909B-47E1-BC9B-684D24CB7ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B65F1800-AC01-472F-A57D-39A17951E352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B65F1800-AC01-472F-A57D-39A17951E352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B65F1800-AC01-472F-A57D-39A17951E352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B65F1800-AC01-472F-A57D-39A17951E352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
